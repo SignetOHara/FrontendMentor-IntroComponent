@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+// VARIABLES
+
+$colors: (
+	primary-red: hsl(0, 100%, 74%),
+  primary-green: hsl(154, 59%, 51%),
+  light-green: hsl(154, 77%, 63%),
+	accent-blue: hsl(248, 32%, 49%),
+	neutral-dark-blue: hsl(249, 10%, 26%),
+	neutral-grayish-blue: hsl(246, 25%, 77%),
+	footer-color: hsl(228, 45%, 44%)
+);
+
+$font-weights: (
+	small: 400,
+	medium: 500,
+	semi-bold: 600,
+	bold: 700
+);
+
+$box-shadow: 2px 6px 3px 2px rgba(0, 0, 0, 0.3);
+
+// GENERAL STYLINGS
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+  background: url(images/bg-intro-mobile.png) map-get($colors, primary-red);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+// MAIN TEXT SECTION
+
+.main-text-container {
+	color: white;
+	margin-bottom: 3.5rem;
+
+	h1 {
+		padding-top: 4rem;
+		margin: auto;
+		text-align: center;
+		width: 70%;
+	}
+
+	p {
+		font-weight: map-get($font-weights, small);
+		padding-top: 1rem;
+		margin: auto;
+		text-align: center;
+		width: 85%;
+	}
+}
+
+// BADGE SECTION
+
+.highlighted-badge-container {
+	background: map-get($colors, accent-blue);
+	border-radius: 10px;
+	box-shadow: $box-shadow;
+	color: white;
+	margin: 0 auto 1.5rem;
+	padding: 1rem;
+	text-align: center;
+	width: 70%;
+
+	.highlighted-badge {
+		font-size: 1rem;
+		font-weight: map-get($font-weights, small);
+		margin: auto;
+		width: 23ch;
+
+		.highlited-badge__bold {
+			font-weight: map-get($font-weights, semi-bold);
+		}
+	}
+}
+
+// FORM SECTION
+
+.form-container {
+	background: white;
+	border-radius: 10px;
+  box-shadow: $box-shadow;
+	color: map-get($colors, neutral-dark-blue);
+	margin: auto;
+	padding: 1rem;
+  text-align: center;
+  max-width: min-content;
+	min-width: 70%;
+
+	.signup-form {
+		display: grid;
+		grid-auto-rows: 3rem;
+    grid-row-gap: 1rem;
+    margin: auto;
+	}
+
+	// For screen readers
+	.visually-hidden {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+
+	input {
+		border: 1px solid #ccc;
+    border-radius: 5px;
+		display: block;
+    font: inherit;
+    font-weight: map-get($font-weights, semi-bold);
+    padding-left: 1rem;
+    
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+
+  button {
+    background: map-get($colors, primary-green);
+    border: none;
+    border-radius: 5px;
+    box-shadow: $box-shadow;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+    &:hover {
+      background: map-get($colors, light-green);
+    }
+  }
+
+  .terms-services {
+    color: map-get($colors, neutral-grayish-blue);
+    font-size: 0.6rem;
+    font-weight: map-get($font-weights, semi-bold);
+    margin: auto;
+    width: 85%;
+
+    .terms-services__highlight {
+      color: map-get($colors, primary-red);
+      font-weight: map-get($font-weights, bold);
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+// Animate the cta button! Maybe also blue badge
+// Pro-tip: Dont set :focus outline:none as it breaks site for keyboard users. Create own style instead https://medium.com/@matuzo/writing-css-with-accessibility-in-mind-8514a0007939
+// http://www.outlinenone.com/
+// FOOTER
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: map-get($colors, footer-color);
+}

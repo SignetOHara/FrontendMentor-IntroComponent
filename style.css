@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: url(images/bg-intro-mobile.png) #ff7a7a;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.main-text-container {
+  color: white;
+  margin-bottom: 3.5rem;
+}
+.main-text-container h1 {
+  padding-top: 4rem;
+  margin: auto;
+  text-align: center;
+  width: 70%;
+}
+.main-text-container p {
+  font-weight: 400;
+  padding-top: 1rem;
+  margin: auto;
+  text-align: center;
+  width: 85%;
+}
+
+.highlighted-badge-container {
+  background: #6055a5;
+  border-radius: 10px;
+  box-shadow: 2px 6px 3px 2px rgba(0, 0, 0, 0.3);
+  color: white;
+  margin: 0 auto 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  width: 70%;
+}
+.highlighted-badge-container .highlighted-badge {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: auto;
+  width: 23ch;
+}
+.highlighted-badge-container .highlighted-badge .highlited-badge__bold {
+  font-weight: 600;
+}
+
+.form-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 2px 6px 3px 2px rgba(0, 0, 0, 0.3);
+  color: #3e3c49;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+  max-width: min-content;
+  min-width: 70%;
+}
+.form-container .signup-form {
+  display: grid;
+  grid-auto-rows: 3rem;
+  grid-row-gap: 1rem;
+  margin: auto;
+}
+.form-container .visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.form-container input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: block;
+  font: inherit;
+  font-weight: 600;
+  padding-left: 1rem;
+}
+.form-container input::placeholder {
+  opacity: 0.5;
+}
+.form-container button {
+  background: #38cc8c;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 6px 3px 2px rgba(0, 0, 0, 0.3);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.form-container button:hover {
+  background: #58e9aa;
+}
+.form-container .terms-services {
+  color: #b9b6d3;
+  font-size: 0.6rem;
+  font-weight: 600;
+  margin: auto;
+  width: 85%;
+}
+.form-container .terms-services .terms-services__highlight {
+  color: #ff7a7a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+/*# sourceMappingURL=style.css.map */
