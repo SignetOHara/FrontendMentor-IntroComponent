@@ -97,21 +97,17 @@ body {
 
 	.form__input--section {
 		display: grid;
-		grid-template-columns: 1fr calc(1.5rem + 1.2rem);
 		grid-template-rows: auto auto;
 		margin-bottom: 1rem;
-
+	
 		.invalid {
-			.form__input--errorIcon {
-				display: block;
-			}
-
 			input,
 			input:focus {
 				border: 2px solid map-get($colors, primary-red);
 				color: map-get($colors, primary-red);
 				padding-right: calc(1.5rem + 1.2rem + 0.5rem);
 			}
+			
 			.form__input--errorMsg {
 				display: block;
 			}
@@ -121,7 +117,6 @@ body {
 			border: 1px solid #ccc;
 			border-radius: 5px;
 			color: map-get($colors, neutral-dark-blue);
-			grid-column: 1/3;
 			grid-row: 1;
 			font: map-get($font-weights, semi-bold) $mobile-font-size 'Poppins', sans-serif;
 			height: 2.5rem;
@@ -135,22 +130,12 @@ body {
 			}
 		}
 
-		.form__input--errorIcon {
-			align-self: center;
-			display: none;
-			grid-column: 2/3;
-			grid-row: 1;
-			width: 1.5rem;
-			height: 1.5rem;
-		}
-
 		.form__input--errorMsg {
 			color: map-get($colors, primary-red);
 			display: none;
 			font-size: $mobile-font-size;
 			font-style: italic;
 			font-weight: map-get($font-weights, medium);
-			grid-column: 1/3;
 			grid-row: 2;
 			justify-self: end;
 			margin-top: 0.5rem;
