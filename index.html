@@ -40,7 +40,7 @@
 				</h2>
 			</section>
 
-			<form action="index.html" class="form">
+			<form action="index.html" class="form" id="form">
 				<div class="form__input--section">
 					<label for="first-name" class="visually-hidden"></label>
 					<input
@@ -48,13 +48,13 @@
 						id="first-name"
 						placeholder="First Name"
 					/>
-					<span class="form__input--errorMsg"></span>
+					<small class="form__input--errorMsg">Error</small>
 				</div>
 
 				<div class="form__input--section">
 					<label for="last-name" class="visually-hidden"></label>
 					<input type="text" id="last-name" placeholder="Last Name" />
-					<span class="form__input--errorMsg"></span>
+					<small class="form__input--errorMsg"></small>
 				</div>
 
 				<div class="form__input--section">
@@ -64,7 +64,7 @@
 						id="email"
 						placeholder="E-Mail Address"
 					/>
-					<span class="form__input--errorMsg"></span>
+					<small class="form__input--errorMsg"></small>
 				</div>
 
 				<div class="form__input--section">
@@ -74,7 +74,7 @@
 						id="password"
 						placeholder="Password"
 					/>
-					<span class="form__input--errorMsg"></span>
+					<small class="form__input--errorMsg"></small>
 				</div>
 
 				<button type="submit" class="button">

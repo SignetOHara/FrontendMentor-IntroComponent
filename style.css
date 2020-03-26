@@ -64,15 +64,6 @@ body {
   grid-template-rows: auto auto;
   margin-bottom: 1rem;
 }
-.form .form__input--section .invalid input,
-.form .form__input--section .invalid input:focus {
-  border: 2px solid #ff7a7a;
-  color: #ff7a7a;
-  padding-right: calc(1.5rem + 1.2rem + 0.5rem);
-}
-.form .form__input--section .invalid .form__input--errorMsg {
-  display: block;
-}
 .form .form__input--section input {
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -85,13 +76,18 @@ body {
 .form .form__input--section input::placeholder {
   opacity: 0.5rem;
 }
-.form .form__input--section input:invalid {
-  box-shadow: none;
+.form .form__input--section .success {
+  border: medium solid #38cc8c;
+}
+.form .form__input--section .invalid {
+  background: url(images/icon-error.svg) no-repeat 90%;
+  border: medium solid #ff7a7a;
+  color: #ff7a7a;
 }
 .form .form__input--section .form__input--errorMsg {
   color: #ff7a7a;
   display: none;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   font-style: italic;
   font-weight: 500;
   grid-row: 2;

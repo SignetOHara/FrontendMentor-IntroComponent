@@ -12,6 +12,13 @@ $colors: (
 	footer-color: hsl(228, 45%, 44%)
 );
 
+$font-size: (
+	mobile-normal-font-size: 0.8rem,
+	mobile-small-font-size: 0.6rem,
+	desktop-normal-font-size: 1rem,
+	desktop-small-font-size: 0.8rem
+);
+
 $mobile-font-size: 0.8rem;
 
 $font-weights: (
@@ -50,7 +57,7 @@ body {
 	}
 
 	p {
-		font-size: $mobile-font-size;
+		font-size: map-get($font-size, mobile-normal-font-size);
 		font-weight: map-get($font-weights, small);
 		line-height: 1.4rem;
 		padding-top: 1rem;
@@ -73,7 +80,7 @@ body {
 	width: 80%;
 
 	.highlighted-badge {
-		font-size: $mobile-font-size;
+		font-size: map-get($font-size, mobile-normal-font-size);
 		font-weight: map-get($font-weights, small);
 		margin: auto;
 		width: 23ch;
@@ -99,53 +106,48 @@ body {
 		display: grid;
 		grid-template-rows: auto auto;
 		margin-bottom: 1rem;
-	
-		.invalid {
-			input,
-			input:focus {
-				border: 2px solid map-get($colors, primary-red);
-				color: map-get($colors, primary-red);
-				padding-right: calc(1.5rem + 1.2rem + 0.5rem);
-			}
-			
-			.form__input--errorMsg {
-				display: block;
-			}
-		}
 
 		input {
 			border: 1px solid #ccc;
 			border-radius: 5px;
 			color: map-get($colors, neutral-dark-blue);
 			grid-row: 1;
-			font: map-get($font-weights, semi-bold) $mobile-font-size 'Poppins', sans-serif;
+			font: map-get($font-weights, semi-bold)
+					map-get($font-size, mobile-normal-font-size) 'Poppins',
+				sans-serif;
 			height: 2.5rem;
 			padding: 0 1rem;
 
 			&::placeholder {
 				opacity: 0.5rem;
 			}
-			&:invalid {
-				box-shadow: none;
-			}
+		}
+
+		.success {
+			border: medium solid map-get($colors, primary-green);
+		}
+
+		.invalid {
+			background: url(images/icon-error.svg) no-repeat 90%;
+			border: medium solid map-get($colors, primary-red);
+			color: map-get($colors, primary-red);
 		}
 
 		.form__input--errorMsg {
 			color: map-get($colors, primary-red);
 			display: none;
-			font-size: $mobile-font-size;
+			font-size: map-get($font-size, mobile-small-font-size);
 			font-style: italic;
 			font-weight: map-get($font-weights, medium);
 			grid-row: 2;
 			justify-self: end;
 			margin-top: 0.5rem;
-			
+
 			&::first-letter {
 				text-transform: uppercase;
 			}
 		}
 	}
-
 
 	// Button
 	button {
@@ -155,7 +157,9 @@ body {
 		box-shadow: $box-shadow;
 		color: white;
 		cursor: pointer;
-		font: map-get($font-weights, semi-bold) $mobile-font-size 'Poppins', sans-serif;
+		font: map-get($font-weights, semi-bold)
+				map-get($font-size, mobile-normal-font-size) 'Poppins',
+			sans-serif;
 		height: 2.5rem;
 		letter-spacing: 1px;
 		margin-bottom: 1rem;
@@ -170,7 +174,7 @@ body {
 	// Terms & Services Section
 	.terms-services {
 		color: map-get($colors, neutral-grayish-blue);
-		font-size: 0.6rem;
+		font-size: map-get($font-size, mobile-small-font-size);
 		font-weight: map-get($font-weights, semi-bold);
 		margin: auto;
 		text-align: center;
@@ -196,9 +200,10 @@ body {
 	}
 }
 
-// Animate the cta button! Maybe also blue badge
+// Animate the cta button! Wobble after a few seconds!! Maybe also blue badge ***************
 // Pro-tip: Dont set :focus outline:none as it breaks site for keyboard users. Create own style instead https://medium.com/@matuzo/writing-css-with-accessibility-in-mind-8514a0007939
 // http://www.outlinenone.com/
+
 // FOOTER
 
 .attribution {
@@ -208,7 +213,6 @@ body {
 .attribution a {
 	color: map-get($colors, footer-color);
 }
-
 
 // MEDIA QUERIES
 
