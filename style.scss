@@ -15,11 +15,10 @@ $colors: (
 $font-size: (
 	mobile-normal-font-size: 0.8rem,
 	mobile-small-font-size: 0.6rem,
+	desktop-large-font-size: 3rem,
 	desktop-normal-font-size: 1rem,
 	desktop-small-font-size: 0.8rem
 );
-
-$mobile-font-size: 0.8rem;
 
 $font-weights: (
 	small: 400,
@@ -37,9 +36,9 @@ html {
 }
 
 body {
-	font-family: 'Poppins', sans-serif;
 	background: url(images/bg-intro-mobile.png) map-get($colors, primary-red);
 	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
 	margin: 0;
 }
 
@@ -142,15 +141,12 @@ body {
 			grid-row: 2;
 			justify-self: end;
 			margin-top: 0.5rem;
-
-			&::first-letter {
-				text-transform: uppercase;
-			}
 		}
 	}
 
 	// Button
 	button {
+		animation: wiggle 500ms 3s 5 none;
 		background: map-get($colors, primary-green);
 		border: none;
 		border-radius: 5px;
@@ -216,17 +212,102 @@ body {
 
 // MEDIA QUERIES
 
-// MAKE SURE TO CHANGE PADDING ON FORM TO 2rem (Padding is bigger on desktop version)
+@media (min-width: 75rem) {
+	html,
+	body {
+		height: 100vh;
+	}
 
-// Also increase font size to 1rem on body
+	main {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1.5fr 3.5fr;
+		grid-template-areas:
+			'Text-Section Badge'
+			'Text-Section Form'
+			'Text-Section Form';
+		height: 90vh;
+	}
 
+	.main-text-container {
+		align-self: center;
+		font-size: 2rem;
+		grid-area: Text-Section;
 
-// @media (min-width: 70rem) {
-// 	html, body, main {
-// 		height: 100vh;
-// 	}
+		h1 {
+			font-size: map-get($font-size, desktop-large-font-size);
+			max-width: 16ch;
+			margin-right: 3rem;
+			text-align: left;
+		}
 
-// 	main {
-// 		display: flex;
-// 	}
-// }
+		p {
+			font-size: map-get($font-size, desktop-normal-font-size);
+			text-align: left;
+			margin-right: 3rem;
+			max-width: 50ch;
+			width: 70%;
+		}
+	}
+
+	.highlighted-badge-container {
+		align-self: end;
+		grid-area: Badge;
+		margin: 0;
+		max-height: 2.25rem;
+		max-width: 31.25rem;
+		padding: 1rem 2rem;
+
+		.highlighted-badge {
+			width: 100%;
+			font-size: map-get($font-size, desktop-normal-font-size);
+		}
+	}
+
+	.form {
+		align-self: start;
+		grid-area: Form;
+		margin: 2rem 0;
+		max-width: 31.25rem;
+		padding: 2rem;
+
+		.form__input--section {
+			input {
+				font-size: map-get($font-size, desktop-normal-font-size);
+				height: 3rem;
+			}
+
+			.invalid {
+				background-position: 95%;
+			}
+
+			.form__input--errorMsg {
+				font-size: map-get($font-size, desktop-small-font-size);
+			}
+		}
+
+		.button {
+			font-size: map-get($font-size, desktop-normal-font-size);
+		}
+	}
+}
+
+// ANIMATION
+
+@keyframes wiggle {
+	0% {
+		transform: rotateZ(0);
+	}
+	50% {
+		transform: rotateZ(-4deg);
+	}
+	100% {
+		transform: rotateZ(4deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.button {
+		animation: none;
+	}
+}
